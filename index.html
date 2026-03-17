@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vanoli Agenda Demo</title>
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+    <div class="page">
+        <!-- Header -->
+        <header class="topbar">
+            <div class="topbar__inner">
+                <div class="brand">
+                    <div class="brand__mark" aria-hidden="true"></div>
+                    <div class="brand__text">
+                        <h1 class="brand__title">Vanoli Agenda Demo</h1>
+                        <p class="brand__subtitle">Sistema de turnos (demo local) · Barbería </p>
+                    </div>
+                </div>
+                <div class="topbar__meta">
+                    <p class="meta">
+                        Guardado en <strong>localStorage</strong> · Sin Calendly
+                    </p>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main -->
+        <main class="container">
+            <section class="grid">
+                <div class="panel">
+                    <!-- Servicios -->
+                    <section class="section" aria-label="Servicios">
+                        <header class="section__header">
+                            <h2 class="section__title">Elegí un servicio</h2>
+                            <p class="section__hint">Seleccioná una opción para habilitar la reserva.</p>
+                        </header>
+
+                        <div class="services" id="services" role="list">
+                            <button class="service-card" type="button" data-service="Corte" role="listitem">
+                                <div class="service-card__head">
+                                    <h3 class="service-card__title">Corte</h3>
+                                    <span class="pill">30 min</span>
+                                </div>
+                                <p class="service-card__desc">Corte premium con terminación prolija y asesoramiento.</p>
+                            </button>
+
+                            <button class="service-card" type="button" data-service="Corte + barba" role="listitem">
+                                <div class="service-card__head">
+                                    <h3 class="service-card__title">Corte + barba</h3>
+                                    <span class="pill">45 min</span>
+                                </div>
+                                <p class="service-card__desc">Corte + perfilado de barba con estilo barbería.</p>
+                            </button>
+
+                            <button class="service-card" type="button" data-service="Color" role="listitem">
+                                <div class="service-card__head">
+                                    <h3 class="service-card__title">Color</h3>
+                                    <span class="pill">60 min</span>
+                                </div>
+                                <p class="service-card__desc">Aplicación de color con terminación natural y uniforme.
+                                </p>
+                            </button>
+                        </div>
+                    </section>
+
+                    <!-- Fecha -->
+                    <section class="section" aria-label="Fecha">
+                        <header class="section__header">
+                            <h2 class="section__title">Elegí un día</h2>
+                        </header>
+
+                        <div class="field">
+                            <label class="field__label" for="date">Fecha</label>
+                            <input class="field__control" id="date" name="date" type="date" />
+                        </div>
+                    </section>
+
+                    <!-- Horarios -->
+                    <section class="section" aria-label="Horarios">
+                        <header class="section__header">
+                            <h2 class="section__title">Elegí un horario</h2>
+                            <p class="section__hint">Los horarios ocupados se muestran como “Ocupado”.</p>
+                        </header>
+
+                        <div class="times" id="times" aria-live="polite"></div>
+                    </section>
+
+                    <!-- Acción -->
+                    <section class="section" aria-label="Reservar">
+                        <div class="actions">
+                            <button class="btn btn--primary" id="reserveBtn" type="button">
+                                Reservar turno
+                            </button>
+                            <p class="status" id="status" role="status" aria-live="polite"></p>
+                        </div>
+                    </section>
+                </div>
+
+                <aside class="panel panel--aside" aria-label="Turnos agendados">
+                    <header class="section__header">
+                        <h2 class="section__title">Turnos agendados</h2>
+                        <p class="section__hint">Se guardan en este navegador para esta demo.</p>
+                    </header>
+
+                    <div class="bookings" id="bookings"></div>
+                </aside>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p class="footer__text">© <span id="year"></span> Vanoli Web Studio</p>
+        </footer>
+    </div>
+
+    <script src="js/style.js"></script>
+</body>
+
+</html>
