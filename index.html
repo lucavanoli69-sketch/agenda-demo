@@ -51,7 +51,7 @@
                             <button class="service-card" type="button" data-service="Corte + barba" role="listitem">
                                 <div class="service-card__head">
                                     <h3 class="service-card__title">Corte + barba</h3>
-                                    <span class="pill">45 min</span>
+                                    <span class="pill">60 min</span>
                                 </div>
                                 <p class="service-card__desc">Corte + perfilado de barba con estilo barbería.</p>
                             </button>
@@ -73,9 +73,19 @@
                             <h2 class="section__title">Elegí un día</h2>
                         </header>
 
-                        <div class="field">
-                            <label class="field__label" for="date">Fecha</label>
-                            <input class="field__control" id="date" name="date" type="date" />
+                        <div class="week">
+                            <div class="week__head">
+                                <p class="week__label">Semana</p>
+                                <div class="week__nav">
+                                    <button class="btn btn--secondary" id="prevWeekBtn" type="button">
+                                        Semana anterior
+                                    </button>
+                                    <button class="btn btn--secondary" id="nextWeekBtn" type="button">
+                                        Semana siguiente
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="week__days" id="weekDays" aria-label="Selector semanal"></div>
                         </div>
                     </section>
 
@@ -86,12 +96,34 @@
                             <p class="section__hint">Los horarios ocupados se muestran como “Ocupado”.</p>
                         </header>
 
-                        <div class="times" id="times" aria-live="polite"></div>
+                        <div class="times-actions">
+                            <button class="btn btn--secondary" id="viewTimesBtn" type="button">
+                                Ver horarios disponibles
+                            </button>
+                        </div>
+
+                        <div class="times-panel" id="timesPanel" aria-live="polite">
+                            <div class="times-panel__head">
+                                <h3 class="times-panel__title">Horarios disponibles</h3>
+                            </div>
+                            <div class="times" id="times"></div>
+                        </div>
                     </section>
 
                     <!-- Acción -->
                     <section class="section" aria-label="Reservar">
                         <div class="actions">
+                            <div class="field">
+                                <label class="field__label" for="clientName">Nombre</label>
+                                <input
+                                    class="field__control"
+                                    id="clientName"
+                                    name="clientName"
+                                    type="text"
+                                    placeholder="Tu nombre"
+                                    autocomplete="name"
+                                />
+                            </div>
                             <button class="btn btn--primary" id="reserveBtn" type="button">
                                 Reservar turno
                             </button>
